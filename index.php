@@ -39,7 +39,7 @@ switch ($message) {
       getServicios($chatId,$response,$opciones);
 
     break;
-    case '/convocatoria':
+    case '/convocatorias':
     $url = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/2DA_CONVOCATORIA%202018.pdf";
     $response= "Perfecto, te adjunto el PDF en el que podras leer toda la informacion sobre la nueva convocatoria <a href ='".$url."'> Click Aqui</a>";
     sendMessage($chatId,$response);
