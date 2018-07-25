@@ -1,0 +1,8 @@
+1.Click en organismos auxiliares
+2.Elige el nombre de la universidad
+3.Ingresa tus datos
+4.Clic en tramites y servicios
+5.Elige el proceso a realizar
+6.Cantidad con numeros enteros
+7.Clic en Agregar
+8.Imprime tu recibo y listo!
