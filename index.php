@@ -151,7 +151,7 @@ function getInfoServ($chatId){
 }
 function getUbicacion($chatId){
 $fp = fopen("Ubi.txt","r");
-while(!feofl($fp)){
+while(!feof($fp)){
     $linea = fgets($fp);
     $salida  = $linea;
     sendMessage($chatId,$salida);
