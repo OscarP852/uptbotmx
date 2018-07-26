@@ -20,7 +20,7 @@ $IMA = "Ingenieria en Mecanica Automotriz";
 $ITM = "Ingenieria en Tecnologias de Manufactura";
 switch ($message) {
     case '/ayuda':
-    $response = "Hola $nombre este es un bot sobre la UPT, coloca una diagnonal / para ver todos los comandos disponibles";
+    $response = "Hola $nombre este es un bot sobre la UPTecamac, coloca una diagnonal / para ver todos los comandos disponibles";
         sendMessage($chatId,$response);
         break;
     case '/calendario':
@@ -153,7 +153,7 @@ function getUbicacion($chatId){
 $fp = fopen("Ubi.txt","r");
 while(!feof($fp)){
     $linea = fgets($fp);
-    $salida  = $linea;
+    $salida = $linea;
     sendMessage($chatId,$salida);
 }
 fclose($fp);
