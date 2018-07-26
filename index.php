@@ -35,14 +35,15 @@ switch ($message) {
     $web = "https://sfpya.edomexico.gob.mx/recaudacion/";
     $response=  "Te proporciono la pagina del gobierno donde podras realizar distintos procesos, reinscripciones, pagos de titulacion, credenciales, etc. <a href ='".$web."'>  Click Aqui</a> Sabes usarla?";
     $opciones = '["SI"],["NO"]';
-    
       getServicios($chatId,$response,$opciones);
-
     break;
     case '/convocatorias':
     $url = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/2DA_CONVOCATORIA%202018.pdf";
-    $response= "Perfecto, te adjunto el PDF en el que podras leer toda la informacion sobre la nueva convocatoria <a href ='".$url."'> Click Aqui</a>";
+    $response= "Perfecto, te adjunto el PDF en el que podras leer toda la informacion sobre la nueva convocatoria <a href ='".$url."'></a>";
     sendMessage($chatId,$response);
+    break;
+    case '/ubicacion':
+    getUbicacion($chatId);
     break;
     default:
      
@@ -148,5 +149,13 @@ function getInfoServ($chatId){
     }
     fclose($fp);
 }
-
+function getUbicacion($chatId){
+$fp = fopen("Ubi.txt","r");
+while(!feofl($fp)){
+    $linea = fgets($fp);
+    $salida  = $linea;
+    sendMessage($chatId,$salida);
+}
+fclose($fp);
+}
 ?>
