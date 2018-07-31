@@ -82,7 +82,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $opciones = '["'.$IS.'"],["'.$NI.'"],["'.$IF.'"],["'.$IMA.'"],["'.$ITM.'"]';
         $finalMessage = "La universidad cuenta con 5 carreras, te interesa alguna?";
            getCarreras($chatId,$finalMessage,$opciones);
-    }elseif (strpos($message,'vicios')||$message,'obierno')||$message,'cripcion')) {
+    }elseif (strpos($message,'vicios')||strpos($message,'obierno')||strpos($message,'cripcion')) {
         $web = "https://sfpya.edomexico.gob.mx/recaudacion/";
         $finalMessage = "Te proporciono la pagina del gobierno donde podras realizar distintos procesos, reinscripciones, pagos de titulacion, credenciales, etc. <a href ='".$web."'>  Click Aqui</a> Sabes usarla?";
     }else{
