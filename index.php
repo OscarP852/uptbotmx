@@ -6,23 +6,25 @@ $website = "https://api.telegram.org/bot".$botToken;
 $update = file_get_contents('php://input');
 $update = json_decode($update, TRUE);
 
-$chatId = $update["message"]["chat"]["id"]; // id del chat
+$chatId = $update["message"]["chat"]["id"]; 
+$chatType = $update["message"]["chat"]["type"]; 
+$message = $update["message"]["text"]; 
+$nombre = $update["message"]["from"]["first_name"];
 
-$chatType = $update["message"]["chat"]["type"]; // tipo de chat: privado, grupo , supergrupo, etc
-
-$message = $update["message"]["text"]; //lo que escribe el usuario
-$nombre = $update["message"]["from"]["first_name"]; //nombre de usuario
 evaluateMessage($chatId ,$message,$nombre);
+
 $IS = "Ingenieria en Software";
 $NI = "Licenciatura en Negocios Internacionales";
 $IF = "Ingenieria Financiera";
 $IMA = "Ingenieria en Mecanica Automotriz";
 $ITM = "Ingenieria en Tecnologias de Manufactura";
-switch ($message) {
+
+switch ($message) 
+{
     case '/ayuda':
     $response = "Hola $nombre este es un bot sobre la UPTecamac, coloca una diagnonal / para ver todos los comandos disponibles";
         sendMessage($chatId,$response);
-        break;
+    break;
     case '/calendario':
          getCalendario($chatId);
     break;
@@ -47,16 +49,17 @@ switch ($message) {
     break;
     default:
      
-        break;
+    break;
 }
-if($message == $IS){getSoftware($chatId);}elseif ($message == $NI) {getNI($chatId);}
-elseif ($message == $IF) {getIF($chatId);}elseif ($message == $IMA) {getIMA($chatId);
-}elseif ($message == $ITM) {getITM($chatId);
-}
-if ($message == "SI") {
-    getSIserv($chatId);
-}elseif($message == "NO"){
-getInfoServ($chatId);
+
+if($message == $IS){getSoftware($chatId);}
+elseif ($message == $NI) {getNI($chatId);}
+elseif ($message == $IF) {getIF($chatId);}
+elseif ($message == $IMA) {getIMA($chatId);}
+elseif ($message == $ITM) {getITM($chatId);}
+
+if ($message == "SI"){getSIserv($chatId);}
+elseif($message == "NO"){getInfoServ($chatId);
 }
 
 function evaluateMessage($chatId ,$message,$nombre){
@@ -72,15 +75,22 @@ function evaluateMessage($chatId ,$message,$nombre){
 
 	}elseif (strpos($message, 'alendario')) {
         $url = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/Calendario%20escolar%202018-2019.jpg";
-        $finalMessage = "<a href ='".$url."'>Mira o entra al calendario escolar dando click aqui</a>";
-     
+        $finalMessage = "<a href ='".$url."'>Mira o entra al calendario escolar dando click aqui</a>";    
     }elseif (strpos($message,'ola')) {
         $finalMessage = "Hola te  llamas $nombre cierto. Bienvenido espero ser de utilidad, dime que te gustaria saber sobre la UPT";
+    }elseif (strpos($message,'reras')) {
+        $opciones = '["'.$IS.'"],["'.$NI.'"],["'.$IF.'"],["'.$IMA.'"],["'.$ITM.'"]';
+        $finalMessage = "La universidad cuenta con 5 carreras, te interesa alguna?";
+           getCarreras($chatId,$finalMessage,$opciones);
+    }elseif (strpos($message,'vicios')||$message,'obierno')||$message,'cripcion')) {
+        $web = "https://sfpya.edomexico.gob.mx/recaudacion/";
+        $finalMessage = "Te proporciono la pagina del gobierno donde podras realizar distintos procesos, reinscripciones, pagos de titulacion, credenciales, etc. <a href ='".$web."'>  Click Aqui</a> Sabes usarla?";
     }else{
 		
 	}
 	sendMessage($chatId,$finalMessage);
 }
+
 function sendMessage($chatId,$response){
 $url = $GLOBALS[website].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
 file_get_contents($url);
@@ -89,7 +99,6 @@ file_get_contents($url);
 function getCalendario($chatId){
    $url = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/Calendario%20escolar%202018-2019.jpg";
    $salida = "<a href ='".$url."'>Mira o entra al calendario escolar dando click aqui</a>";
-
     sendMessage($chatId,$salida);
 }
 
@@ -106,21 +115,25 @@ $url = "http://uptecamac.edomex.gob.mx/ingenieria_en_software";
 $salida =  "Te interesa el desarollo de aplicaciones y chatbots como este? Genial, conoce mas de esta carrera en este link <a href ='".$url."'>+ Info</a>";
 sendMessage($chatId,$salida);
 }
+
 function getNI($chatId){
 $url = "http://uptecamac.edomex.gob.mx/licenciatura_en_negocios_internacionales";
 $salida =  "Te gustaria tener la capacidad de dirigir, asesorar y ejecutar estrategias gerenciales, conoce mas de esta carrera en este link <a href ='".$url."'>+ Info</a>";
 sendMessage($chatId,$salida);
 }
+
 function getIF($chatId){
     $url = "http://uptecamac.edomex.gob.mx/ingenieria_financiera";
     $salida =  "Eres bueno al  investigar, analizar, plantear, dirigir tomar decisiones, y te gustan el mundo financiero? conoce mas de esta carrera en este link <a href ='".$url."'>+ Info</a>";
     sendMessage($chatId,$salida);
 }
+
 function getIMA($chatId){
     $url = "http://uptecamac.edomex.gob.mx/ingenieria_mecanica_automotriz";
     $salida =  "Seras capaz de mantener en óptimas condiciones los sistemas mecánicos de la industria automotriz, conoce mas de esta carrera en este link <a href ='".$url."'>+ Info</a>";
     sendMessage($chatId,$salida);
 }
+
 function getITM($chatId){
     $url = "http://uptecamac.edomex.gob.mx/ingenieria_en_tecnologias_de_manufactura";
     $salida =  "Aplica los conocimientos científicos y tecnológicos para mejorar, diseñar, implantar y automatizar procesos de manufactura, conoce mas de esta carrera en este link <a href ='".$url."'>+ Info</a>";
@@ -133,13 +146,13 @@ function getServicios($chatId,$response,$opciones){
      }
      $url = $GLOBALS[website].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response).$elegida;
      file_get_contents($url);
-     
 }
+
 function getSIserv($chatId){
-    $salida =  "Muy bien puedes continuar utilizando los comandos, cualquier duda o interes nos los puedes proporcionar al 5577659278, gracias por utillizar UPtecamac_bot";
+    $salida =  "Muy bien puedes continuar utilizando los comandos, cualquier duda o interes nos los puedes proporcionar al 5577659278, gracias por utilizar UPtecamac_bot";
     sendMessage($chatId,$salida);
-    
 }
+
 function getInfoServ($chatId){
     $fp = fopen("ServiciosDatos.txt", "r");
     while(!feof($fp)) {
@@ -149,13 +162,15 @@ function getInfoServ($chatId){
     }
     fclose($fp);
 }
+
 function getUbicacion($chatId){
 $fp = fopen("Ubi.txt","r");
 while(!feof($fp)){
     $linea = fgets($fp);
     $salida = $linea;
     sendMessage($chatId,$salida);
+        }
+    fclose($fp);
 }
-fclose($fp);
-}
+
 ?>
