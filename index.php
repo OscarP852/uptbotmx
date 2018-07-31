@@ -41,7 +41,7 @@ switch ($message)
     break;
     case '/convocatorias':
     $url = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/2DA_CONVOCATORIA%202018.pdf";
-    $response= "Perfecto, te adjunto el PDF en el que podras leer toda la informacion sobre la nueva convocatoria <a href ='".$url."'></a>";
+    $response= "Perfecto, te adjunto el PDF en el que podras leer toda la informacion sobre la nueva convocatoria <a href ='".$url."'>Click Aqui</a>";
     sendMessage($chatId,$response);
     break;
     case '/ubicacion':
@@ -58,8 +58,8 @@ elseif ($message == $IF) {getIF($chatId);}
 elseif ($message == $IMA) {getIMA($chatId);}
 elseif ($message == $ITM) {getITM($chatId);}
 
-if ($message == "SI"){getSIserv($chatId);}
-elseif($message == "NO"){getInfoServ($chatId);
+if ($message == "SI" ||  $message == "si" ){getSIserv($chatId);}
+elseif($message == "NO" || $message == "no"){getInfoServ($chatId);
 }
 
 function evaluateMessage($chatId ,$message,$nombre){
