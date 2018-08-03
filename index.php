@@ -84,9 +84,8 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'vicios')||strpos($message,'obierno')||strpos($message,'cripcion')) {
         $web = "https://sfpya.edomexico.gob.mx/recaudacion/";
         $finalMessage = "Te proporciono la pagina del gobierno donde podras realizar distintos procesos, reinscripciones, pagos de titulacion, credenciales, etc. <a href ='".$web."'>  Click Aqui</a> Sabes usarla?";
-    }else{
-        $rain = u'\U00002614'; 
-         $finalMessage = "No te entendi podrias replantear tu peticion porfavor  xD '".$rain."'";
+    }else{    
+         $finalMessage = "No te entendi podrias replantear tu peticion porfavor  xD";
 	}
 	sendMessage($chatId,$finalMessage);
 }
