@@ -79,7 +79,13 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'ola')) {
         $finalMessage = "Hola te  llamas $nombre cierto. Bienvenido espero ser de utilidad, dime que te gustaria saber sobre la UPT";
     }elseif (strpos($message,'reras')) {
+        $IS = "Ingenieria en Software";
+        $NI = "Licenciatura en Negocios Internacionales";
+        $IF = "Ingenieria Financiera";
+        $IMA = "Ingenieria en Mecanica Automotriz";
+        $ITM = "Ingenieria en Tecnologias de Manufactura";
         $opciones = '["'.$IS.'"],["'.$NI.'"],["'.$IF.'"],["'.$IMA.'"],["'.$ITM.'"]';
+        $finalMessage = "La Universidad cuenta con 5 carreras"; 
            getCarreras($chatId,$finalMessage,$opciones);
     }elseif (strpos($message,'vicios')||strpos($message,'obierno')||strpos($message,'cripcion')) {
         $web = "https://sfpya.edomexico.gob.mx/recaudacion/";
