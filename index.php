@@ -112,7 +112,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         }
         sendMessage($chatId,$titulos);
     }else{    
-         $finalMessage = "No te entendi podrias replantear tu peticion porfavor  xD";
+       
 	}
 	sendMessage($chatId,$finalMessage);
 }
@@ -217,6 +217,5 @@ for ($i=0; $i < 9; $i++) {
 sendMessage($chatId, $titulos);
 
 }
-
 
 ?>
