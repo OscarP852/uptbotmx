@@ -188,7 +188,7 @@ include("simple_html_dom");
 $context = stream_context_create(array('http'->array('header'->'Accept: application/xml')));
 $url = "http://www.europapress.es/rss/rss.aspx";
 $xmlstring = file_get_contents($url,false,$context);
-$xml = simplexml_load_string($xmlstring,"SimpleXMLElement",LIBXML_NOCDATA);
+$xml = simplexml_load_string($xmlstring,"SimpleXMLElement");
 $json = json_encode($xml);
 $array = json_decode($json,TRUE);
 for ($i=0; $i < 4; $i++) { 
