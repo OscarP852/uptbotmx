@@ -98,7 +98,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $finalMessage = "Si quieres conocer mas sobre los avances y actividades entra y conoce nuestro canal de Youtube<a href ='".$webYoutube."'> Click Aca :D </a>";
     }elseif (strpos($message,'icias')||strpos($message,'undo')) {
         include("simple_html_dom.php");
- 
+     
         $context = stream_context_create(array('http' =>  array('header' => 'Accept: application/xml')));
         $url = "https://expansion.mx/rss/mundo";
         $xmlstring = file_get_contents($url, false, $context);
@@ -108,8 +108,9 @@ function evaluateMessage($chatId ,$message,$nombre){
         $array = json_decode($json, TRUE);
         
         for ($i=0; $i < 9; $i++) {
-            $finalMessage = $finalMessage."\n\n".$array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> Ver Nota Completa</a>";
+            $titulos = $titulos."\n\n".$array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> Ver Nota Completa</a>";
         }
+        sendMessage($chatId,$titulos);
     }else{    
          $finalMessage = "No te entendi podrias replantear tu peticion porfavor  xD";
 	}
@@ -216,5 +217,23 @@ for ($i=0; $i < 9; $i++) {
 sendMessage($chatId, $titulos);
 
 }
+function EjemploMineria($chatId){
+    include("simple_html_dom.php");
+     
+    $context = stream_context_create(array('http' =>  array('header' => 'Accept: application/xml')));
+    $url = "https://expansion.mx/rss/mundo";
+    $xmlstring = file_get_contents($url, false, $context);
+    
+    $xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
+    $json = json_encode($xml);
+    $array = json_decode($json, TRUE);
+    
+    for ($i=0; $i < 9; $i++) {
+        $titulos = $titulos."\n\n".$array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> Ver Nota Completa</a>";
+    }
+    
+    sendMessage($chatId, $titulos);
+    
+    }
 
 ?>
