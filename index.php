@@ -111,7 +111,7 @@ function evaluateMessage($chatId ,$message,$nombre){
             $finalMessage = $finalMessage."\n\n".$array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> Ver Nota Completa</a>";
         }
     }else{    
-       
+         $finalMessage = "No te entendi podrias replantear tu peticion porfavor  xD";
 	}
 	sendMessage($chatId,$finalMessage);
 }
