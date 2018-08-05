@@ -85,11 +85,14 @@ function evaluateMessage($chatId ,$message,$nombre){
         $IMA = "Ingenieria en Mecanica Automotriz";
         $ITM = "Ingenieria en Tecnologias de Manufactura";
         $opciones = '["'.$IS.'"],["'.$NI.'"],["'.$IF.'"],["'.$IMA.'"],["'.$ITM.'"]';
-        $finalMessage = "La Universidad cuenta con 5 carreras"; 
-           getCarreras($chatId,$finalMessage,$opciones);
+        $finalCarrera = "La Universidad cuenta con 5 carreras te interesa alguna?"; 
+           getCarreras($chatId,$finalCarrera,$opciones);
     }elseif (strpos($message,'vicios')||strpos($message,'obierno')||strpos($message,'cripcion')) {
         $web = "https://sfpya.edomexico.gob.mx/recaudacion/";
         $finalMessage = "Te proporciono la pagina del gobierno donde podras realizar distintos procesos, reinscripciones, pagos de titulacion, credenciales, etc. <a href ='".$web."'>  Click Aqui</a> Sabes usarla?";
+    }elseif (strpos($message,'deos')|| strpos($message,'tube')||strpos($message,'nal')) {
+        $webYoutube = "https://www.youtube.com/channel/UCfMmeRkkuUKEV47QS3LH3wA/videos";
+        $finalMessage = "Si quieres conocer mas sobre los avances y actividades entra y conoce nuestro canal de Youtube ;)";
     }else{    
          $finalMessage = "No te entendi podrias replantear tu peticion porfavor  xD";
 	}
