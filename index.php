@@ -92,7 +92,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $finalMessage = "Te proporciono la pagina del gobierno donde podras realizar distintos procesos, reinscripciones, pagos de titulacion, credenciales, etc. <a href ='".$web."'>  Click Aqui</a> Sabes usarla?";
     }elseif (strpos($message,'deos')|| strpos($message,'tube')||strpos($message,'nal')) {
         $webYoutube = "https://www.youtube.com/channel/UCfMmeRkkuUKEV47QS3LH3wA/videos";
-        $finalMessage = "Si quieres conocer mas sobre los avances y actividades entra y conoce nuestro canal de Youtube<a href ='".$webYoutube."'> Click Aca :D </a>;
+        $finalMessage = "Si quieres conocer mas sobre los avances y actividades entra y conoce nuestro canal de Youtube<a href ='".$webYoutube."'> Click Aca :D </a>";
     }else{    
          $finalMessage = "No te entendi podrias replantear tu peticion porfavor  xD";
 	}
