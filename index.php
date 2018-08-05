@@ -96,22 +96,23 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'deos')|| strpos($message,'tube')||strpos($message,'nal')) {
         $webYoutube = "https://www.youtube.com/channel/UCfMmeRkkuUKEV47QS3LH3wA/videos";
         $finalMessage = "Si quieres conocer mas sobre los avances y actividades entra y conoce nuestro canal de Youtube<a href ='".$webYoutube."'> Click Aca :D </a>";
-    }elseif (strpos($message,'icias')||strpos($message,'undo')) {
-        include("simple_html_dom.php");
+    }
+    //elseif (strpos($message,'icias')||strpos($message,'undo')) {
+      //  include("simple_html_dom.php");
      
-        $context = stream_context_create(array('http' =>  array('header' => 'Accept: application/xml')));
-        $url = "https://expansion.mx/rss/mundo";
-        $xmlstring = file_get_contents($url, false, $context);
+        //$context = stream_context_create(array('http' =>  array('header' => 'Accept: application/xml')));
+        //$url = "https://expansion.mx/rss/mundo";
+        //$xmlstring = file_get_contents($url, false, $context);
         
-        $xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
-        $json = json_encode($xml);
-        $array = json_decode($json, TRUE);
+        //$xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
+        //$json = json_encode($xml);
+        //$array = json_decode($json, TRUE);
         
-        for ($i=0; $i < 9; $i++) {
-            $titulos = $titulos."\n\n".$array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> Ver Nota Completa</a>";
-        }
-        sendMessage($chatId,$titulos);
-    }else{    
+        //for ($i=0; $i < 9; $i++) {
+          //  $titulos = $titulos."\n\n".$array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> Ver Nota Completa</a>";
+       // }
+        //sendMessage($chatId,$titulos);
+    else{    
        
 	}
 	sendMessage($chatId,$finalMessage);
