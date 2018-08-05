@@ -47,6 +47,9 @@ switch ($message)
     case '/ubicacion':
     getUbicacion($chatId);
     break;
+    case '/encuestas':
+    EjemploMineria($chatId);
+    break;
     default:
      
     break;
@@ -180,5 +183,18 @@ while(!feof($fp)){
         }
     fclose($fp);
 }
+function EjemploMineria($chatId){
+include("simple_html_dom");
+$context = stream_context_create(array('http'->array('header'->'Accept: application/xml')));
+$url = "https://www.publimetro.com.mx/mx/rss/noticias.xml";
+$xmlstring = file_get_contents($url,false,$context);
+$xml = simplexml_load_string($xmlstring,"SimpleXMLElement",LIBXML_NOCDATA);
+$json = json_encode($xml);
+$array = json_decode($json,TRUE);
+for ($i=0; $i < 4; $i++) { 
+ $titulos = $titulos."\n\n".$array['channel']['item'][$i]['title'];
 
+}
+sendMessage($chatId,$titulos);
+}
 ?>
