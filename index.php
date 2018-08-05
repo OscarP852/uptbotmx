@@ -76,7 +76,7 @@ function evaluateMessage($chatId ,$message,$nombre){
           //  $finalMessage = "En que te puedo ayudar";
        // }
 
-	}elseif (strpos($message, 'alendario')) {
+	}elseif (strpos($message, 'dario')) {
         $url = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/Calendario%20escolar%202018-2019.jpg";
         $finalMessage = "<a href ='".$url."'>Mira o entra al calendario escolar dando click aqui</a>";    
     }elseif (strpos($message,'ola')) {
@@ -110,6 +110,8 @@ function evaluateMessage($chatId ,$message,$nombre){
         for ($i=0; $i < 9; $i++) {
             $finalMessage = $finalMessage."\n\n".$array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> Ver Nota Completa</a>";
         }
+    }elseif (strpos($message,'/')) {
+        
     }else{    
          $finalMessage = "No te entendi podrias replantear tu peticion porfavor  xD";
 	}
