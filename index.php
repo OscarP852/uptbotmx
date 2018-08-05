@@ -123,7 +123,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         //sendMessage($chatId,$titulos);
     elseif (strpos($message,'cación')||strpos($message,'cacion')||strpos($message,'ccion')||strpos($message,'cción')) {
        $finalMessage = "Nos ubicamos en Av. 5 de Mayo Tecamac CP 55740 Tecamac de Felipe Villanueva";
-    }{    
+    }else{    
        
 	}
 	sendMessage($chatId,$finalMessage);
