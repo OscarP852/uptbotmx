@@ -17,7 +17,7 @@ $userName = $update["message"]["from"]["username"];
 $date= $update["message"]["date"];
 
 foreach ($update as $usuario) {
-    mysqli_query($conexion,"INSERT INTO usuario(chatId,chatType,message,userName) VALUES ('".$usuario["message"]["chat"]["id"]."',".$usuario["message"]["chat"]["type"].",'".$usuario["message"]["text"]."','".$usuario["message"]["from"]["username"]."')");	
+    mysqli_query($conexion,"INSERT INTO usuario(id,chatId,chatType,message,userName) VALUES (id,".$usuario["message"]["chat"]["id"].",".$usuario["message"]["chat"]["type"].",'".$usuario["message"]["text"]."','".$usuario["message"]["from"]["username"]."')");	
 }
 mysqli_close($conexion);
 evaluateMessage($chatId ,$message,$nombre);
