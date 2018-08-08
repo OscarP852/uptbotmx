@@ -1,23 +1,34 @@
 <?php
 
+require("conexion.php");
+
 $botToken = "517459197:AAGAplPrJ-VZrngZt4HJuIsau2qTd_I1d0k";
 $website = "https://api.telegram.org/bot".$botToken;
 
 $update = file_get_contents('php://input');
 $update = json_decode($update, TRUE);
+$id = $update["update_id"];
 
 $chatId = $update["message"]["chat"]["id"]; 
 $chatType = $update["message"]["chat"]["type"]; 
 $message = $update["message"]["text"]; 
 $nombre = $update["message"]["from"]["first_name"];
+$userName = $update["message"]["from"]["username"];
+$date= $update["message"]["date"];
 
 evaluateMessage($chatId ,$message,$nombre);
-
+$query = "INSERT INTO usuario (id,chatId,chatType,message,userName) VALUES('id','$chatId','$chatType','$message','$userName')";
 $IS = "Ingenieria en Software";
 $NI = "Licenciatura en Negocios Internacionales";
 $IF = "Ingenieria Financiera";
 $IMA = "Ingenieria en Mecanica Automotriz";
 $ITM = "Ingenieria en Tecnologias de Manufactura";
+
+if(!mysql_query($query,$connect)) { 
+    die('Error : Query Not Executed. Please Fix the Issue! ' . mysql_error());
+   } else{ 
+    echo "Data Inserted Successully!!!";
+   } 
 
 switch ($message) 
 {
