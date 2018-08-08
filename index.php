@@ -1,6 +1,6 @@
 <?php
 
-include 'conexion.php';
+require("conexion.php");
 
 $botToken = "517459197:AAGAplPrJ-VZrngZt4HJuIsau2qTd_I1d0k";
 $website = "https://api.telegram.org/bot".$botToken;
@@ -17,7 +17,7 @@ $userName = $update["message"]["from"]["username"];
 $date= $update["message"]["date"];
 
 foreach ($update as $usuario) {
-    mysqli_query($conexion,"INSERT INTO usuario(id,chatId,chatType,message,userName) VALUES (id,".$usuario["message"]["chat"]["id"].",".$usuario["message"]["chat"]["type"].",'".$usuario["message"]["text"]."','".$usuario["message"]["from"]["username"]."')");	
+    mysql_query("INSERT INTO usuario(id,chatId,chatType,message,userName) VALUES(id,".$usuario["message"]["chat"]["id"].",'".$usuario["message"]["chat"]["type"]."','".$usuario["message"]["text"]."','".$usuario["message"]["from"]["username"]."')");	
 }
 mysqli_close($conexion);
 evaluateMessage($chatId ,$message,$nombre);
