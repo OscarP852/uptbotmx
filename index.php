@@ -145,7 +145,8 @@ function evaluateMessage($chatId ,$message,$nombre){
         $i2 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38808241_1733592610087749_8107259295327846400_n.jpg?_nc_cat=0&oh=24274b02bdca5185c0c850ce595b968d&oe=5BFD9B28";
         $i3 = "";
         $i4 = "";
-        $finalMessage = "<a href ='".$i1."'>Click Aqui</a><a href ='".$i2."'>Click Aqui</a>";
+        $finalMessage = "<a href ='".$i1."'>Click Aqui</a>";
+        $finalMessage = "<a href ='".$i2."'>Click Aqui</a>";
         
     }else{    
        $finalMessage = "No entendi podrias replantear tu peticion ;)";
