@@ -141,11 +141,12 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'genieria')||strpos($message,'cenciatura')) {
         $finalMessage = "Bueno...";
     }elseif (strpos($message,'ipcion')||strpos($message,'ipciones')||strpos($message,'bimos')||strpos($message,'cribo')) {
-        $i1 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38831513_1733592813421062_2479939598751367168_n.jpg?_nc_cat=0&oh=fe4b5ba7a872b3b32d28c5fa97ba5806&oe=5C12EF3C";
-        $i2 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38808241_1733592610087749_8107259295327846400_n.jpg?_nc_cat=0&oh=24274b02bdca5185c0c850ce595b968d&oe=5BFD9B28";
-        $i3 = "";
-        $i4 = "";
-        $arrayName = array($i1,$i2);
+        $i1 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38808241_1733592610087749_8107259295327846400_n.jpg?_nc_cat=0&oh=24274b02bdca5185c0c850ce595b968d&oe=5BFD9B28";
+        $i2 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38734194_1733592620087748_6832082255309963264_n.jpg?_nc_cat=0&oh=811d08e50c4fe4071913cd3436f32cc3&oe=5C1086BB";
+        $i3 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38784266_1733592603421083_2012812294144131072_n.jpg?_nc_cat=0&oh=d1e8bbafb6907afed3c0853348038749&oe=5BC8B056";
+        $i4 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38734153_1733592730087737_4583800281833144320_n.jpg?_nc_cat=0&oh=4ab1e67ee1795db805ba8ff4edae6530&oe=5BCCF26F";
+        $i5 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38758291_1733592773421066_5609102708754612224_n.jpg?_nc_cat=0&oh=894d0dc2331c4390df9d58fcf8f07f81&oe=5C134602";
+        $arrayName = array($i1,$i2,$i3,$i4,$i5);
         $longitud = count($arrayName);
         for ($i=0; $i < $longitud ; $i++) { 
             sendMessage($chatId,"<a href ='".$arrayName[$i]."'>Click Aqui</a>");
