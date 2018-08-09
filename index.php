@@ -136,7 +136,7 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'start')) {
         $finalMessage = "Hola";
     }else{    
-       $finalCarrera = "No entendi podrias replantear tu peticion ;)"
+       $finalCarrera = "No entendi podrias replantear tu peticion ;)";
 	}
 	sendMessage($chatId,$finalMessage);
 }
