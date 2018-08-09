@@ -94,7 +94,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $finalMessage = "<a href ='".$url."'>Mira o entra al calendario escolar dando click aqui</a>";    
     }elseif (strpos($message,'ola')) {
 
-        $finalMessage = "Bienvenido, te  llamas $nombre cierto. Bienvenido espero ser de utilidad, dime que te gustaria saber sobre la UPT?";
+        $finalMessage = "Bienvenido, te  llamas $nombre cierto, espero ser de utilidad, dime que te gustaria saber sobre la UPT?";
 
     }elseif (strpos($message,'reras')) {
 
@@ -136,7 +136,7 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'start')) {
         $finalMessage = "Hola";
     }else{    
-       $finalCarrera = "No entendi podrias replantear tu peticion ;)";
+       $finalMessage = "No entendi podrias replantear tu peticion ;)";
 	}
 	sendMessage($chatId,$finalMessage);
 }
