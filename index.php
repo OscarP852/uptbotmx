@@ -148,7 +148,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $arrayName = array($i1,$i2);
         $longitud = count($arrayName);
         for ($i=0; $i < $longitud ; $i++) { 
-            $finalMessage = "<a href ='".$arrayName[$i]."'>Click Aqui</a><br>";
+            $finalMessage += "<a href ='".$arrayName[$i]."'>Click Aqui</a><br>";
         }
         
     }else{    
