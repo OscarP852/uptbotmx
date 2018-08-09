@@ -136,7 +136,7 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'start')) {
         $finalMessage = "Hola";
     }elseif (strpos($message,'omos')||strpos($message,'emes')) {//
-        $imagenes =  "C:\Users\oklp1\Documents\GitHub\uptbotmx\momo1.jpg"
+        $imagenes =  "C:\Users\oklp1\Documents\GitHub\uptbotmx\momo1.jpg";
         $finalMessage = "Mira jaja <a href = '".$imagenes."'>foto</a>";
     }else{    
        $finalMessage = "No entendi podrias replantear tu peticion ;)";
