@@ -125,8 +125,8 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif ($message,'fono'||strpos($message,'fonos')||strpos($message,'mero')||strpos($message,'meros')||strpos($message,'rreo')) {
         $correo = "control_escolar@uptecamac.edu.mx";
         $finalMessage = "Contactanos para resolver tus dudas al 01(55) 59388670 o escribenos en  $correo";
-    }elseif (strrpos($message,'ok')||strrpos($message,'Ok')) {
-        $finalMessage = ";) Un placer ayudarte $nombre";
+    }elseif (strpos($message,'ok')||strpos($message,'Ok')) {
+        $finalMessage = "Un placer ayudarte $nombre";
     }elseif (strpos($message,'toria')||strpos($message,'torias')) {
         $urlConvocatoria = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/2DA_CONVOCATORIA%202018.pdf";
         $finalMessage = "Perfecto, te adjunto el PDF en el que podras leer toda la informacion sobre la nueva convocatoria <a href ='".$urlConvocatoria."'>Click Aqui</a>";
