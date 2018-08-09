@@ -133,7 +133,7 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'tado')||strrpos($message,'tados')) {
         $urlResultados = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/admision/RESULTADOS%20ABRI18.pdf"; 
         $finalMessage = "Mucha Suerte mira los resultados en el siguiente enlace -><a href ='".$urlResultados."'>Click Aqui</a>";
-    }elseif (strpos($message,'start') {
+    }elseif (strpos($message,'start')) {
         $finalMessage = "Hola";
     }else{    
        $finalCarrera = "No entendi podrias replantear tu peticion ;)"
