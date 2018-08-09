@@ -140,6 +140,12 @@ function evaluateMessage($chatId ,$message,$nombre){
        $finalMessage = "Mira jaja <a href = '".$imagenes."'>.</a>";
     }elseif (strpos($message,'genieria')||strpos($message,'cenciatura')) {
         $finalMessage = "Bueno...";
+    }elseif (strpos($message,'ipcion')||strpos($message,'ipciones')||strpos($message,'bimos')||strpos($message,'cribo')) {
+        $i1 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38831513_1733592813421062_2479939598751367168_n.jpg?_nc_cat=0&oh=fe4b5ba7a872b3b32d28c5fa97ba5806&oe=5C12EF3C";
+        $i2 = "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38808241_1733592610087749_8107259295327846400_n.jpg?_nc_cat=0&oh=24274b02bdca5185c0c850ce595b968d&oe=5BFD9B28";
+        $i3 = "";
+        $i4 = "";
+        $finalMessage = "<a href ='".$i1."'>Click Aqui</a>\n\n<a href ='".$i2."'>Click Aqui</a>";
     }else{    
        $finalMessage = "No entendi podrias replantear tu peticion ;)";
 	}
