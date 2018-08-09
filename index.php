@@ -136,7 +136,7 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'start')) {
         $finalMessage = "Hola";
     }elseif (strpos($message,'omos')||strpos($message,'emes')) {//
-       $imagenes =  "momo1.jpg";
+       $imagenes =  "C:/Users/oklp1/Documents/GitHub/uptbotmx/momo1.jpg";
        //$imagenes = "https://www.facebook.com/LPTUNI/photos/a.599019300464027.1073741829.482377295461562/661757720856851/?type=3&theater"; 
        $finalMessage = "Mira jaja <img src = '".$imagenes."'>";
     }else{    
