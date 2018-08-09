@@ -124,7 +124,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $finalMessage = "Realiza tu evaluacion docente o imprime tu comprobante por aqui<a href = '".$urlEvaDOC."'> Ingresar</a>";
     }elseif ($message,'fono'||strpos($message,'fonos')||strpos($message,'mero')||strpos($message,'meros')||strpos($message,'rreo')) {
         $correo = "control_escolar@uptecamac.edu.mx";
-        $finalMessage = "Contactanos para resolver tus dudas al 01(55) 59388670 o escribenos en  $correo";
+        $finalMessage = "Contactanos para resolver tus dudas al 01(55) 59388670 o escribenos en control_escolar@uptecamac.edu.mx";
     }elseif (strpos($message,'ok')||strpos($message,'Ok')) {
         $finalMessage = "Un placer ayudarte $nombre";
     }elseif (strpos($message,'toria')||strpos($message,'torias')) {
