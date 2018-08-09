@@ -152,6 +152,19 @@ function evaluateMessage($chatId ,$message,$nombre){
             sendMessage($chatId,"<a href ='".$arrayName[$i]."'>Click Aqui</a>");
         }
         
+    }elseif (strpos($message,'etencia')||strpos($message,'etencias')) {
+        $finalMessage = "Tienes hasta el 19 de Agosto para realizar tus competencias";
+    }elseif (strpos($message,'rtas')||strpos($message,'rta')) {
+        $c1 = "Carta de Intencion: 9 de Julio al 15 de Agosto";
+        $c2 = "Carta de Presentacion: 16 de Agosto al 3 de Septiembre";
+        $c3 = "Carta de Aceptacion: 3 de Septiembre al 8 de Sepptiembre";
+        $c4 = "Carta de Termino: 14 de Diciembre";
+        $arregloCarta = array($c1,$c2,$c3,$c4);
+        $tam = count($arregloCarta);
+        for ($i=0; $i < tam; $i++) { 
+            sendMessage($chatId,$arrayName[$i]);
+        }
+
     }else{    
        $finalMessage = "No entendi podrias replantear tu peticion ;)";
 	}
