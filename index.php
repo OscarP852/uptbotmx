@@ -138,7 +138,7 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'omos')||strpos($message,'emes')) {//
        $imagenes =  "https://scontent.fmex12-1.fna.fbcdn.net/v/t1.0-9/38258922_661757724190184_5050579058434244608_n.jpg?_nc_cat=0&oh=18b87e2f540eeded86d65c6b2b23a30c&oe=5BF98E4A";
        $finalMessage = "Mira jaja <a href = '".$imagenes."'>.</a>";
-    }elseif (strops($message,'genieria')||strpos($message,'cenciatura')) {
+    }elseif (strpos($message,'genieria')||strpos($message,'cenciatura')) {
         $finalMessage = "Bueno...";
     }else{    
        $finalMessage = "No entendi podrias replantear tu peticion ;)";
