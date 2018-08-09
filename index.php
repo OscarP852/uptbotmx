@@ -94,7 +94,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $finalMessage = "<a href ='".$url."'>Mira o entra al calendario escolar dando click aqui</a>";    
     }elseif (strpos($message,'ola')) {
 
-        $finalMessage = "Hola te  llamas $nombre cierto. Bienvenido espero ser de utilidad, dime que te gustaria saber sobre la UPT";
+        $finalMessage = "Bienvenido, te  llamas $nombre cierto. Bienvenido espero ser de utilidad, dime que te gustaria saber sobre la UPT?";
 
     }elseif (strpos($message,'reras')) {
 
@@ -133,6 +133,8 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'tado')||strrpos($message,'tados')) {
         $urlResultados = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/admision/RESULTADOS%20ABRI18.pdf"; 
         $finalMessage = "Mucha Suerte mira los resultados en el siguiente enlace -><a href ='".$urlResultados."'>Click Aqui</a>";
+    }elseif (strpos($message,'start') {
+        $finalMessage = "Hola";
     }else{    
        $finalCarrera = "No entendi podrias replantear tu peticion ;)"
 	}
