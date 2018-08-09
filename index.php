@@ -135,8 +135,9 @@ function evaluateMessage($chatId ,$message,$nombre){
         $finalMessage = "Mucha Suerte mira los resultados en el siguiente enlace -><a href ='".$urlResultados."'>Click Aqui</a>";
     }elseif (strpos($message,'start')) {
         $finalMessage = "Hola";
-    }elseif (strpos($message,'ja')||strpos($message,'JA')) {
-        $finalMessage = "jajajaja";
+    }elseif (strpos($message,'omos')||strpos($message,'emes')) {//
+        $imagenes =  "C:\Users\oklp1\Documents\GitHub\uptbotmx\momo1.jpg"
+        $finalMessage = "Mira jaja <a href = '".$imagenes."'>foto</a>";
     }else{    
        $finalMessage = "No entendi podrias replantear tu peticion ;)";
 	}
