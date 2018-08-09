@@ -130,7 +130,7 @@ function evaluateMessage($chatId ,$message,$nombre){
     }elseif (strpos($message,'toria')||strpos($message,'torias')) {
         $urlConvocatoria = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/2DA_CONVOCATORIA%202018.pdf";
         $finalMessage = "Perfecto, te adjunto el PDF en el que podras leer toda la informacion sobre la nueva convocatoria <a href ='".$urlConvocatoria."'>Click Aqui</a>";
-    }elseif (strpos($message,'tado')||strrpos($message,'tados')) {
+    }elseif (strpos($message,'tado')||strpos($message,'tados')) {
         $urlResultados = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/admision/RESULTADOS%20ABRI18.pdf"; 
         $finalMessage = "Mucha Suerte mira los resultados en el siguiente enlace -><a href ='".$urlResultados."'>Click Aqui</a>";
     }elseif (strpos($message,'start')) {
