@@ -73,13 +73,13 @@ elseif ($message == $IF) {getIF($chatId);}
 elseif ($message == $IMA) {getIMA($chatId);}
 elseif ($message == $ITM) {getITM($chatId);}
 
-if ($message == "SI" ||  $message == "si" ){getSIserv($chatId);}
-elseif($message == "NO" || $message == "no"){getInfoServ($chatId);
+if ($message == "SI" ||  $message == "si" || $message == "Si"){getSIserv($chatId);}
+elseif($message == "NO" || $message == "no" || $message == "No"){getInfoServ($chatId);
 }
 
 function evaluateMessage($chatId ,$message,$nombre){
 	if(strpos($message, 'uda')||strpos($message, 'udar')){
-        $finalMessage = "Coloca una diagnonal / o dime en que te podria ayudar";
+        $finalMessage = "habla conmigo :)";
         
         //$random = rand(0,1);
         //if ($random>0) {
@@ -107,7 +107,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $finalCarrera = "La Universidad cuenta con 5 carreras te interesa alguna?"; 
         getCarreras($chatId,$finalCarrera,$opciones);
 
-    }elseif (strpos($message,'vicios')||strpos($message,'obierno')||strpos($message,'cripcion')) {
+    }elseif (strpos($message,'vicios')||strpos($message,'obierno')||strpos($message,'uyente')) {
         
         $web = "https://sfpya.edomexico.gob.mx/recaudacion/";
         $finalMessage = "Te proporciono la pagina del gobierno donde podras realizar distintos procesos, reinscripciones, pagos de titulacion, credenciales, etc. <a href ='".$web."'>  Click Aqui</a> Sabes usarla?";
@@ -117,24 +117,19 @@ function evaluateMessage($chatId ,$message,$nombre){
         $webYoutube = "https://www.youtube.com/channel/UCfMmeRkkuUKEV47QS3LH3wA/videos";
         $finalMessage = "Si quieres conocer mas sobre los avances y actividades entra y conoce nuestro canal de Youtube<a href ='".$webYoutube."'> Click Aca :D </a>";
     
-    }
-    //elseif (strpos($message,'icias')||strpos($message,'undo')) {
-      //  include("simple_html_dom.php");
-     
-        //$context = stream_context_create(array('http' =>  array('header' => 'Accept: application/xml')));
-        //$url = "https://expansion.mx/rss/mundo";
-        //$xmlstring = file_get_contents($url, false, $context);
-        
-        //$xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
-        //$json = json_encode($xml);
-        //$array = json_decode($json, TRUE);
-        
-        //for ($i=0; $i < 9; $i++) {
-          //  $titulos = $titulos."\n\n".$array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> Ver Nota Completa</a>";
-       // }
-        //sendMessage($chatId,$titulos);
-    elseif (strpos($message,'cación')||strpos($message,'cacion')||strpos($message,'ccion')||strpos($message,'cción')) {
+    }elseif (strpos($message,'cación')||strpos($message,'cacion')||strpos($message,'ccion')||strpos($message,'cción')) {
        $finalMessage = "Nos ubicamos en Av. 5 de Mayo Tecamac CP 55740 Tecamac de Felipe Villanueva";
+    }elseif (strpos($message,'cente')||strpos($message,'uacion')) {
+        $urlEvaDOC = "189.254.6.230/eva_doc2018";
+        $finalMessage = "Realiza tu evaluacion docente o imprime tu comprobante por aqui<a href = '".$urlEvaDOC."'> Ingresar</a>";
+    }elseif ($message,'fono'||strpos($message,'fonos')||strpos($message,'mero')||strpos($message,'meros')||strpos($message,'rreo')) {
+        $correo = "control_escolar@uptecamac.edu.mx";
+        $finalMessage = "Contactanos para resolver tus dudas al 01(55) 59388670 o escribenos en  $correo";
+    }elseif (strrpos($message,'ok')||strrpos($message,'Ok')) {
+        $finalMessage = ";) Un placer ayudarte $nombre";
+    }elseif (strpos($message,'toria')||strpos($message,'torias')) {
+        $urlConvocatoria = "http://uptecamac.edomex.gob.mx/sites/uptecamac.edomex.gob.mx/files/files/2DA_CONVOCATORIA%202018.pdf";
+        $finalMessage = "Perfecto, te adjunto el PDF en el que podras leer toda la informacion sobre la nueva convocatoria <a href ='".$urlConvocatoria."'>Click Aqui</a>";
     }else{    
        
 	}
