@@ -161,7 +161,7 @@ function evaluateMessage($chatId ,$message,$nombre){
         $c4 = "Carta de Termino: 14 de Diciembre";
         $arregloCarta = array($c1,$c2,$c3,$c4);
         $tam = count($arregloCarta);
-        for ($i=0; $i < tam; $i++) { 
+        for ($i=0; $i < $tam; $i++) { 
             sendMessage($chatId,$arrayName[$i]);
         }
 
